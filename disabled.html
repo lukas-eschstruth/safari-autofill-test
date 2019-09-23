@@ -12,10 +12,29 @@
     <label for="password">password</label>
     <input disabled id="password" type="password">
 </form>
+<button>Toggle disable</button>
 <a href="index.html">Home</a>
 <a href="email.html">Just email</a>
 <a href="password.html">Just password</a>
 <a href="disabled.html">Disabled inputs</a>
 
+<style>
+input:disabled {
+    border: 1px solid red;
+}
+</style>
+
+<script>
+const toggle = document.querySelector("button");
+toggle.addEventListener("click", function() {
+    document.querySelectorAll("input").forEach(function(elt) {
+        if(elt.disabled === true) {
+            elt.disabled = false;
+        } else {
+            elt.disabled = true;
+        }
+    })
+})
+</script>
 </body>
 </html>
